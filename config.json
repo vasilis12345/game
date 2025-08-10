@@ -1,0 +1,25 @@
+{
+  "enemy_1" : {
+    "enemy_name": "Giant rat",
+    "attack": 13,
+    "health": 51,
+    "attack_res": 0,
+    "xp_held": 95
+    },
+  "enemy_2" : {
+    "enemy_name": "Forest hound",
+    "attack": 9,
+    "health": 35,
+    "attack_res": 0,
+    "xp_held": 32
+
+  },
+  "enemy_3" : {
+    "enemy_name": "Forest hound",
+    "attack": 55,
+    "health": 42,
+    "attack_res": 0,
+    "xp_held": 350
+  }
+}
+
