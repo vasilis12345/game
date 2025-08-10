@@ -1,8 +1,10 @@
-from enemies import Enemies
+from enemies import Enemy
 from Hero import Hero
 
-Hero = Hero()
-Enemies = Enemies()
-print(Enemies.health)
-Hero.do_attack(Enemies)
-print(Enemies.health)
+
+
+Hero(100 , 25 , 0 , 1, 1000)
+print(Enemy.health)
+Hero.do_attack()
+print(Enemy.healt)
+

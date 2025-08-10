@@ -1,23 +1,18 @@
 
-    def Stats(self , attack , health , attack_res , xp_held) :
-        if self.enemy_type == "forest hound" :
+        "forest hound" :
             self.attack = 9
             self.health = 35
             self.attack_res = 0
             self.xp_held = 120
-        if self.enemy_type == "huge rat" :
+        "huge rat" :
             self.attack = 13
             self.health = 51
             self.attack_res = 0
             self.xp_held = 220
-        if self.enemy_type == "low life" :
+       "low life" :
             self.attack = 55
             self.health = 42
             self.attack_res = 0
             self.xp_held = 350
-    def Do_Attack(self , Hero ) :
-        if self.enemy_type == "forest_hound" :
-            Hero.health - self.attack()
-
 
 
