@@ -2,9 +2,8 @@ from enemy import Enemy
 import random
 enemy = Enemy()
 
-
 class Hero :
-    def __init__(self , attack , health , level , xp_req , xp_held , critical_chance , critical_damage_multiplier) :
+    def __init__(self) :
         self.attack = 25
         self.health = 100
         self.xp_req = 1000
@@ -14,6 +13,7 @@ class Hero :
         self.critical_damage_multiplier = 1.9
     def level_up(self) :
         if  self.xp_req >= self.xp_held :
+            print(f"You just leved up. Your current level is {self.level}")
             self.level += 1
             self.attack += 5
             self.health += 25
@@ -26,13 +26,18 @@ class Hero :
             enemy.enemy_health -= (self.attack * self.critical_damage_multiplier )
             if enemy.enemy_health <= 0 :
                 print(f"You killed {enemy.enemy_type} with a critical and gained {enemy.enemy_xp}")
-                enemy.death_respwan()
+                self.xp_held += enemy.enemy_xp
+                self.level_up()
+                enemy.death_respawn()
             else :
                 print(f"You did critical damage to {enemy.enemy_type} its health is now {enemy.enemy_health}")
         else :
             enemy.enemy_health -= self.attack
             if enemy.enemy_health <= 0:
                 print(f"You killed {enemy.enemy_type} and gained {enemy.enemy_xp}")
+                self.xp_held += enemy.enemy_xp
+                self.level_up()
+                enemy.death_respawn()
             else :
                 print(f"You did damage to {enemy.enemy_type} its health is now {enemy.enemy_health}")
 

@@ -15,5 +15,7 @@ class Enemy:
         self.enemy_health = self.random_spawn["health"]
         self.enemy_attack_res = self.random_spawn["attack_res"]
         self.enemy_xp = self.random_spawn["xp_held"]
-    def death_respwan(self) :
-        self.random_spawn = self.random_spawn = random.choice(list(enemy_data.values()))
+    def death_respawn(self) :
+        self.random_spawn = random.choice(list(enemy_data.values()))
+        print(f"a {self.enemy_type} just spawned")
+
