@@ -16,3 +16,4 @@ class Enemy:
         self.enemy_attack_res = random_spawn["attack_res"]
         self.enemy_xp = random_spawn["xp_held"]
 
+#test
