@@ -16,14 +16,3 @@ class Enemy:
         self.enemy_attack_res = random_spawn["attack_res"]
         self.enemy_xp = random_spawn["xp_held"]
 
-    def show_info(self):
-        print(f"Enemy: {self.enemy_type}")
-        print(f"ID: {self.id}")
-        print(f"Attack: {self.enemy_attack}")
-        print(f"Health: {self.enemy_health}")
-        print(f"Attack Resistance: {self.enemy_attack_res}")
-        print(f"XP: {self.enemy_xp}")
-
-# Example usage:
-enemy = Enemy()
-enemy.show_info()
