@@ -24,10 +24,18 @@ class Hero :
     def do_attack(self) :
         if self.critical_chance == 1 :
             enemy.enemy_health -= (self.attack * self.critical_damage_multiplier )
-            print(f"You did critical damage to {enemy.enemy_type} its health is now {enemy.enemy_health}")
+            if enemy.enemy_health <= 0 :
+                print(f"You killed {enemy.enemy_type} with a critical and gained {enemy.enemy_xp}")
+                enemy.death_respwan()
+            else :
+                print(f"You did critical damage to {enemy.enemy_type} its health is now {enemy.enemy_health}")
         else :
             enemy.enemy_health -= self.attack
-            print(f"You did damage to {enemy.enemy_type} its health is now {enemy.enemy_health}")
+            if enemy.enemy_health <= 0:
+                print(f"You killed {enemy.enemy_type} and gained {enemy.enemy_xp}")
+            else :
+                print(f"You did damage to {enemy.enemy_type} its health is now {enemy.enemy_health}")
+
     def get_attacked(self) :
         self.health -= enemy.enemy_attack
         print(f"You got hit by {enemy.enemy_type} for -{enemy.enemy_attack} now your health is {self.health}")
