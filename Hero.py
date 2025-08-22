@@ -58,5 +58,4 @@ class Hero :
             print(f"You healed {self.heal_amount} hp now your hp is {self.health}")
         if self.health <= 0 :
             print(f"You healed {self.heal_amount} hp now your hp is 0")
-            print("You died")
             self.dead = True
