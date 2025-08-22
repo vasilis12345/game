@@ -2,6 +2,8 @@ from enemy import Enemy
 import random
 enemy = Enemy()
 
+item_list = []
+
 class Hero :
     def __init__(self) :
         self.attack = 25
@@ -36,7 +38,7 @@ class Hero :
         else :
             enemy.enemy_health -= self.attack
             if enemy.enemy_health <= 0:
-                print(f"You did {self.attack} damage and killed {enemy.enemy_type} and gained {enemy.enemy_xp} xp")
+                print(f"You did {self.attack} damage and killed {enemy.enemy_type}. {enemy.enemy_xp} xp gained")
                 self.xp_held += enemy.enemy_xp
                 self.level_up()
                 enemy.death_respawn()
@@ -44,10 +46,21 @@ class Hero :
                 print(f"You did damage to {enemy.enemy_type} its health is now {enemy.enemy_health}")
     def get_attacked(self) :
         self.health -= enemy.enemy_attack
-        print(f"You got hit by {enemy.enemy_type} for -{enemy.enemy_attack} now your health is {self.health}")
-        if self.health < 0 :
+        if self.health > 0 :
+            print(f"You got hit by {enemy.enemy_type} for {enemy.enemy_attack} now your health is {self.health}")
+        else :
+            print(f"You got hit by {enemy.enemy_type} for {enemy.enemy_attack} now your health is 0")
             print("You died")
             self.dead = True
     def heal(self) :
         self.health += self.heal_amount
-        print(f"You healed {self.heal_amount} hp")
+        if self.health > 0 :
+            print(f"You healed {self.heal_amount} hp now your hp is {self.health}")
+        if self.health <= 0 :
+            print(f"You healed {self.heal_amount} hp now your hp is 0")
+            print("You died")
+            self.dead = True
+    def gain_item(self) :
+        chance = random.randint(1 , 100)
+        if chance < 50 :
+            print("you got nothing")

@@ -1,15 +1,17 @@
 from enemy import Enemy
 from Hero import Hero
-import keyboard
 
 hero = Hero()
 enemy = Enemy()
 
-while hero.dead == False :
-   enemy.death_respawn()
-   if keyboard.is_pressed("a") :
-       hero.do_attack()
-   elif keyboard.is_pressed("h") :
-       hero.heal()
-   hero.get_attacked()
 
+while not hero.dead:
+    character_input =input("Will you attack or heal??")
+    if character_input == "attack" :
+        hero.do_attack()
+        hero.get_attacked()
+    elif character_input == "heal" :
+        hero.get_attacked()
+        hero.heal()
+    else :
+        print("Please enter a possible move")

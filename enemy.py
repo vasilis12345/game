@@ -6,6 +6,8 @@ with open("config.json") as file:
 
 enemy_data = data["enemies"]
 
+
+
 class Enemy:
     def __init__(self):
         self.random_spawn = random.choice(list(enemy_data.values()))
@@ -24,3 +26,5 @@ class Enemy:
         self.enemy_attack_res = self.random_spawn["attack_res"]
         self.enemy_xp = self.random_spawn["xp_held"]
         print(f"a {self.enemy_type} just spawned")
+
+
