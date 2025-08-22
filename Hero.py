@@ -60,7 +60,3 @@ class Hero :
             print(f"You healed {self.heal_amount} hp now your hp is 0")
             print("You died")
             self.dead = True
-    def gain_item(self) :
-        chance = random.randint(1 , 100)
-        if chance < 50 :
-            print("you got nothing")

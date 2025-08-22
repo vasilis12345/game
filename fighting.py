@@ -10,6 +10,7 @@ while not hero.dead:
     if character_input == "attack" :
         hero.do_attack()
         hero.get_attacked()
+        hero.gain_item()
     elif character_input == "heal" :
         hero.get_attacked()
         hero.heal()
