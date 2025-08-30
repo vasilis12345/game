@@ -63,7 +63,6 @@ class Hero :
             print(f"You {GREEN}healed {self.heal_amount} hp{RESET} now your {GREEN}hp{RESET} is {GREEN}{self.health}{RESET}")
         if self.health <= 0 :
             print(f"You {GREEN}healed {self.heal_amount} hp{RESET} now your {GREEN}hp{RESET} is {RED}0{RESET}")
-            print(f"YOU {RED}DIED{RESET}")
             self.dead = True
 
 

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48dd45c2-10f7-41c8-98dd-b9a9ccd86117" name="Changes" comment="new stuff added and fixed" />
+    <list default="true" id="48dd45c2-10f7-41c8-98dd-b9a9ccd86117" name="Changes" comment="new stuff added and fixed some other">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fighting.py" beforeDir="false" afterPath="$PROJECT_DIR$/fighting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,17 +73,18 @@
     "Python.Hero.executor": "Run",
     "Python.enemies.executor": "Run",
     "Python.enemy.executor": "Run",
-    "Python.fighting.executor": "Debug",
+    "Python.fighting.executor": "Run",
     "Python.fighting_test.executor": "Run",
     "Python.menu.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/vasilis"
+    "last_opened_file_path": "/home/vasilis",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.fighting">
     <configuration name="fighting" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="game" />
       <option name="ENV_FILES" value="" />
@@ -319,7 +324,23 @@
       <option name="project" value="LOCAL" />
       <updated>1756528566093</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="new stuff added and fixed some other">
+      <option name="closed" value="true" />
+      <created>1756528606912</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1756528606912</updated>
+    </task>
+    <task id="LOCAL-00024" summary="new stuff added and fixed some other">
+      <option name="closed" value="true" />
+      <created>1756528673815</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1756528673815</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -371,6 +392,7 @@
     <MESSAGE value="introduce config.json restart enemy file" />
     <MESSAGE value="new stuff fixed" />
     <MESSAGE value="new stuff added and fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="new stuff added and fixed" />
+    <MESSAGE value="new stuff added and fixed some other" />
+    <option name="LAST_COMMIT_MESSAGE" value="new stuff added and fixed some other" />
   </component>
 </project>

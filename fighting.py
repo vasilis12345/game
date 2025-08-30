@@ -18,7 +18,9 @@ def fight() :
                 gain_item()
             hero.get_attacked()
         elif character_input == "heal" :
-            hero.get_attacked()
             hero.heal()
+            hero.get_attacked()
         else :
             print("Please enter a possible move")
+
+fight()
