@@ -3,56 +3,43 @@ from rich.console import Console
 from rich.table import Table
 from rich import box
 from rich.live import Live
+from fighting import fight
+from hero import Hero
+
 
 console = Console()
-table = Table(show_header=True, header_style="bold", box=box.SQUARE)
+pointer = 1
 
+with Live(Table(show_header=True, header_style="bold", box=box.SQUARE), refresh_per_second=10, console=console) as live:
+    while True:
+        table = Table(show_header=True, header_style="bold", box=box.SQUARE)
+        table.add_column("[bold]MENU[/bold]")
 
-pointer = 0
+        if pointer == 1:
+            table.add_row("> Fight")
+            table.add_row("See character stats")
+            table.add_row("Inventory")
+        elif pointer == 2:
+            table.add_row("Fight")
+            table.add_row("> See character stats")
+            table.add_row("Inventory")
+        elif pointer == 3:
+            table.add_row("Fight")
+            table.add_row("See character stats")
+            table.add_row("> Inventory")
 
-key = readchar.readkey()
-
-with (Live(table) as live) :
         live.update(table)
-        if key == readchar.key.UP:
-            pointer = min(1, pointer - 1)
-            if pointer == 1:
-                table.add_column("[bold]MENU[/bold]")
-                table.add_row("> Fight")
-                table.add_row("See character stats")
-                table.add_row("Inventory")
-                console.print(table)
-            elif pointer == 2:
-                table.add_column("[bold]MENU[/bold]")
-                table.add_row(" Fight")
-                table.add_row(">See character stats")
-                table.add_row("Inventory")
-                console.print(table)
-            elif pointer == 3:
-                table.add_column("[bold]MENU[/bold]")
-                table.add_row("Fight")
-                table.add_row("See character stats")
-                table.add_row("> Inventory")
-                console.print(table)
-            elif key == readchar.key.DOWN :
-                pointer = max(3, pointer + 1)
-                if pointer == 1 :
-                    table.add_column("[bold]MENU[/bold]")
-                    table.add_row("Fight")
-                    table.add_row("> See character stats")
-                    table.add_row("Inventory")
-                    console.print(table)
-                elif pointer == 2 :
-                    table.add_column("[bold]MENU[/bold]")
-                    table.add_row(" Fight")
-                    table.add_row(">See character stats")
-                    table.add_row("Inventory")
-                    console.print(table)
-                elif pointer == 3 :
-                        table.add_column("[bold]MENU[/bold]")
-                        table.add_row("Fight")
-                        table.add_row("See character stats")
-                        table.add_row("> Inventory")
-                        console.print(table)
 
+        key = readchar.readkey()
+
+        if key == readchar.key.UP:
+            pointer = max(1, pointer - 1)
+        elif key == readchar.key.DOWN:
+            pointer = min(3, pointer + 1)
+        elif key == readchar.key.ENTER :
+            if pointer == 1 :
+                live.stop()
+                fight()
+            if pointer == 2 :
+                print(Hero())
 

@@ -23,4 +23,4 @@ def fight() :
         else :
             print("Please enter a possible move")
 
-fight()
+hero_stats = print(attack)
