@@ -1,5 +1,8 @@
 from enemy import Enemy
 from hero import Hero,  gain_item
+import readchar
+
+KEY = readchar.key
 
 hero = Hero()
 enemy = Enemy()
@@ -16,6 +19,7 @@ def fight() :
             hero.do_attack()
             if enemy.enemy_health <= 0 :
                 gain_item()
+                hero.kill_count += 1
             hero.get_attacked()
         elif character_input == "heal" :
             hero.heal()
@@ -23,4 +27,3 @@ def fight() :
         else :
             print("Please enter a possible move")
 
-hero_stats = print(attack)
