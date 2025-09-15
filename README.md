@@ -1,7 +1,7 @@
 Welcome to my game!!
 
 TODO :
-Find a name\n
+Find a name
 Make an inventory system
 Make a sprite system
 Add a level system with new eneymies 
