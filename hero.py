@@ -2,7 +2,6 @@ from enemy import Enemy
 import random
 enemy = Enemy()
 
-item_list = []
 
 RED = '\033[91m'
 GREEN = '\033[92m'
@@ -67,8 +66,3 @@ class Hero :
             self.dead = True
 
 
-def gain_item() :
-    chance = random.randint(1 , 100)
-    if enemy.enemy_type == "Giant rat" :
-        if 50 >= chance >= 25:
-            item_list.append("paw_boots")

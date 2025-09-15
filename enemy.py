@@ -1,7 +1,7 @@
 import json
 import random
 
-with open("config.json") as file:
+with open("enemy_config.json") as file:
     data = json.load(file)
 
 enemy_data = data["enemies"]

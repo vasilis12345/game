@@ -1,9 +1,10 @@
 from enemy import Enemy
-from hero import Hero,  gain_item
+from hero import Hero
 import readchar
-
+import random
 KEY = readchar.key
 
+inventory = []
 hero = Hero()
 enemy = Enemy()
 
@@ -11,6 +12,15 @@ RED = '\033[91m'
 GREEN = '\033[92m'
 BLUE = '\033[94m'
 RESET = '\033[0m'
+
+def gain_item() :
+    chance = random.randint(1 , 100)
+    if enemy.enemy_type == "Giant rat" :
+        if 50 >= chance >= 25:
+            item_gained = True
+            inventory.append("paw_boots")
+            print("You acquired PAW BOOTS")
+            item_gained = False
 
 def fight() :
     while not hero.dead:
