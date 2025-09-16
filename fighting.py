@@ -7,7 +7,7 @@ KEY = readchar.key
 inventory = []
 hero = Hero()
 enemy = Enemy()
-
+hero.kill_count = 0
 RED = '\033[91m'
 GREEN = '\033[92m'
 BLUE = '\033[94m'

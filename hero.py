@@ -19,7 +19,7 @@ class Hero :
         self.critical_damage_multiplier = 1.9
         self.heal_amount = self.health / 10
         self.dead = False
-        self.kill_count = 1
+        self.kill_count = 0
     def level_up(self) :
             if self.xp_held >= self.xp_req:
                 self.level += 1
