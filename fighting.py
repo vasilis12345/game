@@ -13,22 +13,13 @@ GREEN = '\033[92m'
 BLUE = '\033[94m'
 RESET = '\033[0m'
 
-def gain_item() :
-    chance = random.randint(1 , 100)
-    if enemy.enemy_type == "Giant rat" :
-        if 25 >= chance >= 50:
-            _ = True
-            inventory.append("paw_boots")
-            print("You acquired PAW BOOTS")
-            _ = False
 
 def fight() :
     while not hero.dead:
-        character_input =input(f"Will you {RED}attack{RESET} or {GREEN}heal{RESET}??")
+        character_input =input(f"Will you {RED}attack{RESET} or {GREEN}heal{RESET}??\n")
         if character_input == "attack" :
             hero.do_attack()
             if enemy.enemy_health <= 0 :
-                gain_item()
                 hero.kill_count += 1
             hero.get_attacked()
         elif character_input == "heal" :

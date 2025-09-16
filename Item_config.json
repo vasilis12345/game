@@ -1,0 +1,13 @@
+{
+  "items" : {
+    "Forest hound" : {
+      "id" : 1 , "item_name" : "Paw boots"
+    },
+    "Giant rat" : {
+      "id" : 2 , "item_name" : "Tail whip"
+    },
+    "Low life" : {
+    "id": 1, "item_name": "Skull helmet"
+    }
+  }
+}
