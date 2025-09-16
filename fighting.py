@@ -16,11 +16,11 @@ RESET = '\033[0m'
 def gain_item() :
     chance = random.randint(1 , 100)
     if enemy.enemy_type == "Giant rat" :
-        if 50 >= chance >= 25:
-            item_gained = True
+        if 25 >= chance >= 50:
+            _ = True
             inventory.append("paw_boots")
             print("You acquired PAW BOOTS")
-            item_gained = False
+            _ = False
 
 def fight() :
     while not hero.dead:
