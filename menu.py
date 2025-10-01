@@ -3,8 +3,8 @@ from rich.console import Console
 from rich.table import Table
 from rich import box
 from rich.live import Live
-
 from fighting import fight , hero
+from rich import print as rprint
 
 console = Console()
 pointer = 1
@@ -42,7 +42,7 @@ with Live(Table(show_header=True, header_style="bold", box=box.SQUARE), refresh_
             if pointer == 2 :
                 live.stop()
                 console.clear()
-                print(f"Health = {hero.health}\nAttack = {hero.attack}\nLevel = {hero.level}\nCrit_chance = {hero.critical_chance}\nXP requirement = {hero.xp_req}\nXP being held = {hero.xp_held}\nKill count = {hero.kill_count}")
+                rprint(f"Health = {hero.health}\nAttack = {hero.attack}\nLevel = {hero.level}\nCrit_chance = {hero.critical_chance}\nXP requirement = {hero.xp_req}\nXP being held = {hero.xp_held}\nKill count = {hero.kill_count}")
                 if key == readchar.key.RIGHT :
                     console.clear()
                     live.update(table)

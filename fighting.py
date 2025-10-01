@@ -3,6 +3,7 @@ from hero import Hero
 import readchar
 import random
 KEY = readchar.key
+from rich import print as rprint
 
 inventory = []
 hero = Hero()
@@ -26,5 +27,5 @@ def fight() :
             hero.heal()
             hero.get_attacked()
         else :
-            print("Please enter a possible move")
+            rprint("Please enter a possible move")
 

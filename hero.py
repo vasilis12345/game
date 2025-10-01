@@ -1,6 +1,8 @@
 from enemy import Enemy
 import random
+from rich.console import Console
 enemy = Enemy()
+from rich import print as rprint
 
 
 RED = '\033[91m'
@@ -29,40 +31,40 @@ class Hero :
                 self.critical_damage_multiplier += 0.3
                 self.xp_held -= self.xp_req
                 self.xp_req += 250
-                print(f"You just {BLUE}leveled up{RESET}. Your current {BLUE}level{RESET} is {BLUE}{self.level}{RESET}")
+                rprint(f"You just [blue]leveled up[/blue]. Your current [blue]level[/blue] is [blue]{self.level}[/blue]")
     def do_attack(self) :
         if self.critical_chance == 1 :
             enemy.enemy_health -= (self.attack * self.critical_damage_multiplier )
             if enemy.enemy_health <= 0 :
-                print(f"You did {RED}{self.attack} damage{RESET} and killed {GREEN}{enemy.enemy_type}{RESET} with a {RED}critical{RESET} and gained {BLUE}{enemy.enemy_xp} xp{RESET}")
+                rprint(f"You did [red]{self.attack} damage[/red] and killed [green]{enemy.enemy_type}[/green] with a [red]critical[/red] and gained [blue]{enemy.enemy_xp} xp[/blue]")
                 self.xp_held += enemy.enemy_xp
                 self.level_up()
                 enemy.death_respawn()
             else :
-                print(f"You did {RED}critical damage{RESET} to {GREEN}{enemy.enemy_type}{RESET} its {GREEN}health{RESET} is now {GREEN}{enemy.enemy_health}{RESET}")
+                rprint(f"You did [red]critical damage[/red] to [green]{enemy.enemy_type}[/green] its [green]health[/green] is now [green]{enemy.enemy_health}[/green]")
         else :
             enemy.enemy_health -= self.attack
             if enemy.enemy_health <= 0:
-                print(f"You did {RED}{self.attack} damage{RESET} and killed {GREEN}{enemy.enemy_type}{RESET}. {BLUE}{enemy.enemy_xp} xp gained{RESET}")
+                rprint(f"You did [red]{self.attack} damage[/red] and killed [blue]{enemy.enemy_type}[/blue]. [blue]{enemy.enemy_xp} xp gained[/blue]")
                 self.xp_held += enemy.enemy_xp
                 self.level_up()
                 enemy.death_respawn()
             else :
-                print(f"You did {RED}{self.attack} damage{RESET} to {BLUE}{enemy.enemy_type}{RESET} its {GREEN}health{RESET} is now {GREEN}{enemy.enemy_health}{RESET}")
+                rprint(f"You did [red]{self.attack} damage[/red] to [blue]{enemy.enemy_type}[/blue] its [green]health[/green] is now [green]{enemy.enemy_health}[/green]")
     def get_attacked(self) :
         self.health -= enemy.enemy_attack
         if self.health > 0 :
-            print(f"You got {RED}hit{RESET} by {BLUE}{enemy.enemy_type}{RESET} for {RED}{enemy.enemy_attack}{RESET} now your {GREEN}health{RESET} is {GREEN}{self.health}{RESET}")
+            rprint(f"You got [red]hit[/red] by [blue]{enemy.enemy_type}[/blue] for [red]{enemy.enemy_attack}[/red] now your [green]health[/green] is [green]{self.health}[/green]")
         else :
-            print(f"You got {RED}hit{RESET} by {BLUE}{enemy.enemy_type}{RESET} for {BLUE}{enemy.enemy_attack}{RESET} now your {GREEN}health{RESET} is {RED}0{RESET}")
-            print(f"YOU {RED}DIED{RESET}")
+            rprint(f"You got [red]hit[/red] by [blue]{enemy.enemy_type}[blue] for {BLUE}{enemy.enemy_attack}{RESET} now your {GREEN}health{RESET} is {RED}0{RESET}")
+            rprint(f"YOU {RED}DIED{RESET}")
             self.dead = True
     def heal(self) :
         self.health += self.heal_amount
         if self.health > 0 :
-            print(f"You {GREEN}healed {self.heal_amount} hp{RESET} now your {GREEN}hp{RESET} is {GREEN}{self.health}{RESET}")
+            rprint(f"You {GREEN}healed {self.heal_amount} hp{RESET} now your {GREEN}hp{RESET} is {GREEN}{self.health}{RESET}")
         if self.health <= 0 :
-            print(f"You {GREEN}healed {self.heal_amount} hp{RESET} now your {GREEN}hp{RESET} is {RED}0{RESET}")
+            rprint(f"You {GREEN}healed {self.heal_amount} hp{RESET} now your {GREEN}hp{RESET} is {RED}0{RESET}")
             self.dead = True
 
 
