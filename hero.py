@@ -56,15 +56,15 @@ class Hero :
         if self.health > 0 :
             rprint(f"You got [red]hit[/red] by [blue]{enemy.enemy_type}[/blue] for [red]{enemy.enemy_attack}[/red] now your [green]health[/green] is [green]{self.health}[/green]")
         else :
-            rprint(f"You got [red]hit[/red] by [blue]{enemy.enemy_type}[blue] for {BLUE}{enemy.enemy_attack}{RESET} now your {GREEN}health{RESET} is {RED}0{RESET}")
-            rprint(f"YOU {RED}DIED{RESET}")
+            rprint(f"You got [red]hit[/red] by [blue]{enemy.enemy_type}[/blue] for [red]{enemy.enemy_attack}[/red] now your [green]health[/green] is [red]0[/red]")
+            rprint(f"YOU [red]DIED[/red]")
             self.dead = True
     def heal(self) :
         self.health += self.heal_amount
         if self.health > 0 :
-            rprint(f"You {GREEN}healed {self.heal_amount} hp{RESET} now your {GREEN}hp{RESET} is {GREEN}{self.health}{RESET}")
+            rprint(f"You [green]healed {self.heal_amount} hp[/green] now your [green]hp[/green] is [green]{self.health}[/green]")
         if self.health <= 0 :
-            rprint(f"You {GREEN}healed {self.heal_amount} hp{RESET} now your {GREEN}hp{RESET} is {RED}0{RESET}")
+            rprint(f"You [green]healed {self.heal_amount} hp[/green] now your [green]hp[/green] is [red]0[/red]")
             self.dead = True
 
 
