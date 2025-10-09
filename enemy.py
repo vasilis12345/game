@@ -1,5 +1,6 @@
 import json
 import random
+from rich import print as rprint
 
 from dulwich.objects import sorted_tree_items
 
@@ -27,5 +28,5 @@ class Enemy:
         self.enemy_health = self.random_spawn["health"]
         self.enemy_attack_res = self.random_spawn["attack_res"]
         self.enemy_xp = self.random_spawn["xp_held"]
-        print(f"a {self.enemy_type} just spawned")
+        rprint(f"a [blue]{self.enemy_type}[/blue] just spawned")
 
